@@ -134,7 +134,7 @@ export default class GUI {
     div.style.justifyContent = 'right';
     div.innerHTML = `
       <div class="block-msg">
-        <p class="msg-head">You, ${date}</p>
+        <p class="msg-head">Yuо, ${date}</p>
         <p class="msg-body">${msg}</p>
       </div>
       `;
