@@ -63,12 +63,12 @@ export default class GUI {
     this.ok = this.winModal.querySelector('.btnOk');
     if (this.ok) {
       this.ok.addEventListener('click', this.checkValidity.bind(this, callback));
-      this.ok.addEventListener('keydown', this.checkValidity.bind(this, callback));
+      this.ok.addEventListener('keydown', this.eventKey.bind(this, callback));
     }
 
     this.cancel = this.winModal.querySelector('.btnCancel');
     if (this.cancel) {
-      this.cancel.addEventListener('keydown', this.closeWinModal);
+      this.cancel.addEventListener('keydown', this.eventKey);
       this.cancel.addEventListener('click', this.closeWinModal);
     }
   }
@@ -90,22 +90,26 @@ export default class GUI {
     callback();
   }
 
-  // eslint-disable-next-line class-methods-use-this
-  checkValidityEnter(callback, e) {
-    if (e.key === 'Enter') {
-      const arr = e.target.closest('.window-ask').querySelectorAll('.input-ask');
-      for (let i = 0; i < arr.length; i += 1) {
-        if (!arr[i].checkValidity()) {
-          arr[i].style.outline = 'solid red';
-          arr[i].style.borderColor = 'red';
-          setTimeout(() => {
-            arr[i].style.outline = '';
-            arr[i].style.borderColor = '';
-          }, 1000);
-          return;
+  eventKey(callback, e) {
+    if (typeof e !== 'undefined') {
+      if (e.key === 'Enter' && e.target.classList.contains('btnOk')) {
+        const arr = e.target.closest('.window-ask').querySelectorAll('.input-ask');
+        for (let i = 0; i < arr.length; i += 1) {
+          if (!arr[i].checkValidity()) {
+            arr[i].style.outline = 'solid red';
+            arr[i].style.borderColor = 'red';
+            setTimeout(() => {
+              arr[i].style.outline = '';
+              arr[i].style.borderColor = '';
+            }, 1000);
+            return;
+          }
         }
+        callback();
       }
-      callback();
+      if (e.target.classList.contains('btnCancel')) {
+        this.closeWinModal();
+      }
     }
   }
 
