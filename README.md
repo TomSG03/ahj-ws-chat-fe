@@ -8,3 +8,6 @@
 [![CircleCI](https://circleci.com/gh/TomSG03/ahj-ws-chat-fe/tree/main.svg?style=svg)](https://circleci.com/gh/TomSG03/ahj-ws-chat-fe/tree/main)
 
 ## [Gh-Pages](https://tomsg03.github.io/ahj-ws-chat-fe/)
+
+---
+[Спискок задач](https://github.com/TomSG03/ahs-homeworks-list)
