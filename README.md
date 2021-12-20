@@ -3,7 +3,7 @@
 ## [Домашнее задание к лекции «sse-ws»](https://github.com/TomSG03/ahj-homeworks/tree/simplification/sse-ws)
 
 - [x] Chat
-- [x] [chat - Server](https://github.com/TomSG03/ahj-ws-chat)
+- [x] [Chat - Server](https://github.com/TomSG03/ahj-ws-chat)
 
 [![CircleCI](https://circleci.com/gh/TomSG03/ahj-ws-chat-fe/tree/main.svg?style=svg)](https://circleci.com/gh/TomSG03/ahj-ws-chat-fe/tree/main)
 
